@@ -16,7 +16,7 @@ var inspect = require('util').inspect;
 var getParentPkgJson = require('../');
 var FILE_PATH = process.env.FILE_PATH || __filename;
 
-getParentPkgJson(FILE_PATH, function(err, data) {
+getParentPkgJson(FILE_PATH, function(err, data, pkgJsonPath) {
   if (err) { throw err; }
 
   assert.deepEqual(require(__dirname + '/../package.json'), data);
@@ -24,6 +24,7 @@ getParentPkgJson(FILE_PATH, function(err, data) {
   console.log('The closest package.json data found for the file \n<%s> is:\n\n%s',
     FILE_PATH, inspect(data, null, 4));
 
+  console.log('\npackage.json path: %s', pkgJsonPath);
 });
 ```
 
@@ -42,7 +43,8 @@ Sample output:
       author: 'Alexandru Vladutu',
       license: 'MIT',
       dependencies: { 'try-json-parse': '~0.1.1', debug: '~2.1.3' } }
-    */
+
+    package.json path: c:\Users\alessioalex\Desktop\node_stuff\parent-package\package.json
 
 ## LICENSE
 
