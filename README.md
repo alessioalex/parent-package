@@ -2,6 +2,8 @@
 
 Recursive search (folder path upwards) until the (/some) package.json data is found.
 
+## Say what?
+
 If the file path is `/blablabla/node_modules/NAME/blabla/bla.js` then it will get the JSON data from `/blablabla/node_modules/NAME/package.json`.
 If the file path is `/www/project/sample.js` and `/www/project/package.json` exists it will get the data from there.
 Else it will look for it inside `/www/package.json`, etc. until it finds it (or not).
