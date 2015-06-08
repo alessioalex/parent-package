@@ -1,6 +1,6 @@
 {
   "name": "parent-package",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Recursive search (folder path upwards) until the package.json data is found",
   "main": "index.js",
   "directories": {
